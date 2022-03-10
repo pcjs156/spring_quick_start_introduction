@@ -3,6 +3,10 @@ package polymorphism;
 public class SamsungTV implements TV {
     private final String brandName = "SamsungTV";
 
+    public SamsungTV() {
+        System.out.println("==> " + brandName + " 객체 생성");
+    }
+
     public void turnOn() {
         System.out.println(brandName + "---" + "전원 켠다.");
     }
