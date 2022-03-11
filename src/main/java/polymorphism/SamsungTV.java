@@ -2,6 +2,7 @@ package polymorphism;
 
 public class SamsungTV implements TV {
     private final String brandName = "SamsungTV";
+    private SonySpeaker speaker;
 
     public SamsungTV() {
         System.out.println("==> " + brandName + " 객체 생성");
@@ -16,11 +17,13 @@ public class SamsungTV implements TV {
     }
 
     public void volumeUp() {
-        System.out.println(brandName + "---" + "소리 올린다.");
+        speaker = new SonySpeaker();
+        speaker.volumeUp();
     }
 
     public void volumeDown() {
-        System.out.println(brandName + "---" + "소리 내린다.");
+        speaker = new SonySpeaker();
+        speaker.volumeDown();
     }
 
     public void initMethod() {
