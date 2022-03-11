@@ -1,5 +1,8 @@
 package polymorphism;
 
+import org.springframework.stereotype.Component;
+
+@Component("sony")
 public class SonySpeaker implements Speaker {
     private final String brandName = "SonySpeaker";
 

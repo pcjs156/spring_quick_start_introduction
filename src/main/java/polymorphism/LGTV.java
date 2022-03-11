@@ -1,5 +1,6 @@
 package polymorphism;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -7,6 +8,10 @@ import org.springframework.stereotype.Component;
 @Component("tv")
 public class LGTV implements TV {
     protected final String brandName = "LGTV";
+
+    // Constructor, setter 위에 붙여도 상관 없음
+    @Autowired
+    private Speaker speaker;
 
     public LGTV() {
         System.out.println("===> " + brandName + " 객체 생성");
@@ -21,11 +26,11 @@ public class LGTV implements TV {
     }
 
     public void volumeUp() {
-        System.out.println(brandName + "---" + "소리 올린다.");
+        speaker.volumeUp();
     }
 
     public void volumeDown() {
-        System.out.println(brandName + "---" + "소리 내린다.");
+        speaker.volumeDown();
     }
 
     public static void main(String[] args) {
