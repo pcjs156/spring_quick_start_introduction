@@ -6,13 +6,14 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 @Component("tv")
 public class LGTV implements TV {
     protected final String brandName = "LGTV";
 
     // Constructor, setter 위에 붙여도 상관 없음
-    @Autowired
-    @Qualifier("apple")
+    @Resource(name = "apple")
     private Speaker speaker;
 
     public LGTV() {
