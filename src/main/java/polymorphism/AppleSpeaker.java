@@ -1,9 +1,9 @@
 package polymorphism;
 
-public class SonySpeaker implements Speaker {
-    private final String brandName = "SonySpeaker";
+public class AppleSpeaker implements Speaker {
+    private final String brandName = "AppleSpeaker";
 
-    public SonySpeaker() {
+    public AppleSpeaker() {
         System.out.println("===> " + brandName + " 객체 생성");
     }
 

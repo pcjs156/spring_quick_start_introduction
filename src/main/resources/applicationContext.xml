@@ -18,9 +18,10 @@
         <!--        <constructor-arg value="2700000"/>-->
 
         <!--    명시적으로 Constructor argument의 인자 순서를 정할 수도 있다.   -->
+        <constructor-arg index="0" ref="apple"/>
         <constructor-arg index="1" value="2700000"/>
-        <constructor-arg index="0" ref="sony"/>
     </bean>
 
     <bean id="sony" class="polymorphism.SonySpeaker"/>
+    <bean id="apple" class="polymorphism.AppleSpeaker"/>
 </beans>
