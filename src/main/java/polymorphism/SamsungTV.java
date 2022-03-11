@@ -4,8 +4,9 @@ public class SamsungTV implements TV {
     private final String brandName = "SamsungTV";
     private SonySpeaker speaker;
 
-    public SamsungTV() {
+    public SamsungTV(SonySpeaker speaker) {
         System.out.println("==> " + brandName + " 객체 생성");
+        this.speaker = speaker;
     }
 
     public void turnOn() {
@@ -17,12 +18,10 @@ public class SamsungTV implements TV {
     }
 
     public void volumeUp() {
-        speaker = new SonySpeaker();
         speaker.volumeUp();
     }
 
     public void volumeDown() {
-        speaker = new SonySpeaker();
         speaker.volumeDown();
     }
 

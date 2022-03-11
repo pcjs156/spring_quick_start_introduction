@@ -4,12 +4,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 61p. bean lazy-init attribute를 가지는 경우 클라이언트가 요청하는 시점에 bean이 생성된다.-->
-    <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod"
-          lazy-init="true"/>
+    <!--    <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod"-->
+    <!--          lazy-init="true"/>-->
 
     <!--  Spring bean의 scope 기본값은 singletone  -->
     <!--    <bean id="singletonTV" class="polymorphism.SamsungTV" scope="singleton"/>-->
 
     <!--  Bean이 요청될 때마다 새 객체를 만들어 줌  -->
-    <bean id="prototypeTV" class="polymorphism.SamsungTV" scope="prototype"/>
+    <!--    <bean id="prototypeTV" class="polymorphism.SamsungTV" scope="prototype"/>-->
+
+    <bean id="tv" class="polymorphism.SamsungTV">
+        <constructor-arg ref="sony"/>
+    </bean>
+
+    <bean id="sony" class="polymorphism.SonySpeaker"/>
 </beans>
