@@ -34,11 +34,50 @@
     <!--    </bean>-->
 
     <!--  P namespace setter injection  -->
-    <bean id="tv" class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="2700000"/>
+    <!--    <bean id="tv" class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="2700000"/>-->
 
-    <bean id="sony" class="polymorphism.SonySpeaker"/>
-    <bean id="apple" class="polymorphism.AppleSpeaker"/>
+    <!--    <bean id="sony" class="polymorphism.SonySpeaker"/>-->
+    <!--    <bean id="apple" class="polymorphism.AppleSpeaker"/>-->
 
     <!--  ========================================================================================================  -->
+
+    <!--  4.4 컬렉션(Collection) 객체 설정  -->
+    <bean id="collectionBean" class="com.springbook.ioc.injection.CollectionBean">
+        <property name="addressList">
+            <list>
+                <value>인천 서구 가좌동</value>
+                <value>서울 성북구 정릉동</value>
+            </list>
+        </property>
+        <property name="addressSet">
+            <list>
+                <value>인천 서구 가좌동</value>
+                <value>서울 성북구 정릉동</value>
+                <value>서울 성북구 정릉동</value>
+            </list>
+        </property>
+        <property name="addressMap">
+            <map>
+                <entry>
+                    <key>
+                        <value>고길동</value>
+                    </key>
+                    <value>서울시 강남구 역삼동</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>마이콜</value>
+                    </key>
+                    <value>서울시 강서구 화곡동</value>
+                </entry>
+            </map>
+        </property>
+        <property name="addressProperties">
+            <props>
+                <prop key="고길동">서울시 강남구 역삼동</prop>
+                <prop key="마이콜">서울시 강서구 화곡동</prop>
+            </props>
+        </property>
+    </bean>
 
 </beans>
