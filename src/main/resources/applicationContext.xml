@@ -8,11 +8,15 @@
     <!--    <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod"-->
     <!--          lazy-init="true"/>-->
 
+    <!--  ========================================================================================================  -->
+
     <!--  Spring bean의 scope 기본값은 singletone  -->
     <!--    <bean id="singletonTV" class="polymorphism.SamsungTV" scope="singleton"/>-->
 
     <!--  Bean이 요청될 때마다 새 객체를 만들어 줌  -->
     <!--    <bean id="prototypeTV" class="polymorphism.SamsungTV" scope="prototype"/>-->
+
+    <!--  ========================================================================================================  -->
 
     <!--  Constructor/Setter injection  -->
     <!--    <bean id="tv" class="polymorphism.SamsungTV">-->
@@ -34,4 +38,7 @@
 
     <bean id="sony" class="polymorphism.SonySpeaker"/>
     <bean id="apple" class="polymorphism.AppleSpeaker"/>
+
+    <!--  ========================================================================================================  -->
+
 </beans>
