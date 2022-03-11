@@ -9,14 +9,13 @@ public class SamsungTV implements TV {
         System.out.println("==> " + brandName + "(1) 객체 생성");
     }
 
-    public SamsungTV(Speaker speaker) {
-        System.out.println("==> " + brandName + "(2) 객체 생성");
+    public void setSpeaker(Speaker speaker) {
+        System.out.println("===> setSpeaker() 호출");
         this.speaker = speaker;
     }
 
-    public SamsungTV(Speaker speaker, int price) {
-        System.out.println("==> " + brandName + "(3) 객체 생성");
-        this.speaker = speaker;
+    public void setPrice(int price) {
+        System.out.println("===> setPrice() 호출");
         this.price = price;
     }
 
