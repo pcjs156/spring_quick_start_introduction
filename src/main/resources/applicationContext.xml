@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:p="http://www.springframework.org/schema/p">
 
     <!-- 61p. bean lazy-init attribute를 가지는 경우 클라이언트가 요청하는 시점에 bean이 생성된다.-->
     <!--    <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod"-->
@@ -13,19 +14,23 @@
     <!--  Bean이 요청될 때마다 새 객체를 만들어 줌  -->
     <!--    <bean id="prototypeTV" class="polymorphism.SamsungTV" scope="prototype"/>-->
 
-    <bean id="tv" class="polymorphism.SamsungTV">
-        <!-- 이하 constructor injection -->
-        <!--        <constructor-arg ref="sony"/>-->
-        <!--        <constructor-arg value="2700000"/>-->
+    <!--  Constructor/Setter injection  -->
+    <!--    <bean id="tv" class="polymorphism.SamsungTV">-->
+    <!--        &lt;!&ndash; 이하 constructor injection &ndash;&gt;-->
+    <!--        &lt;!&ndash;        <constructor-arg ref="sony"/>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        <constructor-arg value="2700000"/>&ndash;&gt;-->
 
-        <!--    명시적으로 Constructor argument의 인자 순서를 정할 수도 있다.   -->
-        <!--        <constructor-arg index="0" ref="apple"/>-->
-        <!--        <constructor-arg index="1" value="2700000"/>-->
+    <!--        &lt;!&ndash;    명시적으로 Constructor argument의 인자 순서를 정할 수도 있다.   &ndash;&gt;-->
+    <!--        &lt;!&ndash;        <constructor-arg index="0" ref="apple"/>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        <constructor-arg index="1" value="2700000"/>&ndash;&gt;-->
 
-        <!--    이하 setter injection    -->
-        <property name="speaker" ref="apple"/>
-        <property name="price" value="2700000"/>
-    </bean>
+    <!--        &lt;!&ndash;    이하 setter injection    &ndash;&gt;-->
+    <!--        &lt;!&ndash;        <property name="speaker" ref="apple"/>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        <property name="price" value="2700000"/>&ndash;&gt;-->
+    <!--    </bean>-->
+
+    <!--  P namespace setter injection  -->
+    <bean id="tv" class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="2700000"/>
 
     <bean id="sony" class="polymorphism.SonySpeaker"/>
     <bean id="apple" class="polymorphism.AppleSpeaker"/>
