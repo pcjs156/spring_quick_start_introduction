@@ -1,6 +1,7 @@
 package polymorphism;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -11,6 +12,7 @@ public class LGTV implements TV {
 
     // Constructor, setter 위에 붙여도 상관 없음
     @Autowired
+    @Qualifier("apple")
     private Speaker speaker;
 
     public LGTV() {
@@ -35,6 +37,11 @@ public class LGTV implements TV {
 
     public static void main(String[] args) {
         AbstractApplicationContext ctx = new GenericXmlApplicationContext("applicationContext.xml");
+
         TV tv = (LGTV) ctx.getBean("tv");
+        tv.volumeUp();
+        tv.volumeDown();
+
+        ctx.close();
     }
 }
