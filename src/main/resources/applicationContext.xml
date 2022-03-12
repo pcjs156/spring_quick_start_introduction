@@ -86,4 +86,6 @@
 
     <context:component-scan base-package="polymorphism"/>
 
+    <bean id="speaker" class="polymorphism.SonySpeaker"/>
+
 </beans>

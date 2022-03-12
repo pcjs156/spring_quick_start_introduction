@@ -1,8 +1,5 @@
 package polymorphism;
 
-import org.springframework.stereotype.Component;
-
-@Component("apple")
 public class AppleSpeaker implements Speaker {
     private final String brandName = "AppleSpeaker";
 
